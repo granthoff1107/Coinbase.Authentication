@@ -20,6 +20,13 @@ namespace Coinbase.Authentication.Coinbase
             ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
             ClaimActions.MapJsonKey(ClaimTypes.Name, "name");
        }
+
+        /// <summary>
+        /// This sets whether the Api has access to all account
+        /// By default the user selects which account it will grant access to
+        /// </summary>
+        public bool AccessAllAccounts { get; set; }
+
         /// <summary>
         /// A limit to the amount of money your application can send from the user’s account. This will be displayed on the authorize screen
         /// </summary>

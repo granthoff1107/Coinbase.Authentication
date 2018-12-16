@@ -52,6 +52,12 @@ namespace Coinbase.Authentication.Coinbase
             queryStrings.Add("response_type", "code");
             queryStrings.Add("client_id", Options.ClientId);
             queryStrings.Add("redirect_uri", redirectUri);
+
+            if(Options.AccessAllAccounts)
+            {
+                queryStrings.Add("account", "all");
+            }
+
             if (null != Options.SendLimitAmount)
             {
                 queryStrings.Add("meta[send_limit_amount]", Options.SendLimitAmount.ToString());
